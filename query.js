@@ -1,19 +1,19 @@
 let multichain = require("multichain-node")({
-    port: 9566 ,
+    port: 9566,
     host: '127.0.0.1',
     user: "multichainrpc",
     pass: "7YhsagsdzpLigwwGajiexPAw7DGQimtAWhqcgaboCnFR"
- });
- 
- function getscore(params) {
-  
+});
+
+function getscore(params) {
+
     return new Promise((resolve) => {
         var userDetails = [];
         var key = params.Key;
         var response;
         multichain.listStreamKeyItems({
             stream: "userinfo",
-            key:key,
+            key: key,
 
         }, (err, res) => {
 
@@ -44,7 +44,7 @@ let multichain = require("multichain-node")({
         })
 
     })
- }
- module.exports = {
+}
+module.exports = {
     getscore: getscore
- };
+};
